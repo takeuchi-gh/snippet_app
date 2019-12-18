@@ -1,7 +1,7 @@
-@import "./side_bar";
-@import "./reset.scss";
-@import "./codepretty";
-@import "./header";
-@import "./card";
-@import "./main";
-@import "./flash";
+@import "side_bar.scss";
+@import "reset.scss";
+@import "codepretty.scss";
+@import "header.scss";
+@import "card.scss";
+@import "main.scss";
+@import "flash.scss";
