@@ -7,7 +7,6 @@ class LanguagesController < ApplicationController
   end
   
   def new
-    # @user_id = current_user_id
     @language = Language.new
   end
   
