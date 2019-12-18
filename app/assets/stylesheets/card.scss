@@ -1,0 +1,20 @@
+.main {
+  #howto {
+    margin: 130px auto 0;
+    width: 60%;
+  }
+  .card, .card-body {
+    text-align: center;
+    margin: 0 auto;
+    .card {
+      width: 99px;
+      font-size: 12px;
+      color: #fff;
+      display: inline;
+      padding: 5px;
+    }
+  }
+  p {
+    line-height: 35px;
+  }
+}

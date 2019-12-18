@@ -1,0 +1,49 @@
+<div class="side_bar">
+  <div class="operate">
+    <div class="card bg-dark">
+      <%= link_to "カテゴリー登録", new_language_path(current_user) %>
+    </div>
+    <div class="card bg-dark">
+      <%= link_to "スニペット登録",  new_snippet_path %>
+    </div>
+  </div>
+  <div class="languages">
+    <ul class="accordion card">
+      <% current_user.languages.each do |language| %>
+        <li>
+          <div class="language card-header">
+            <div class="language_name">
+              <%= language.name %>
+            </div>
+            <div class="language_delete">
+              <%= link_to "削除", language_path(language.id), method: 'DELETE', data: { confirm: '削除しますか？' } %>
+            </div>
+          </div>
+          <ul>
+            <% language.snippets.sort_by(&:title).each do |snippet| %>
+              <li data-jstree='{ "icon" : "none" }'>
+                <div class="snippet list-group-flush">
+                  <div class="snippet_name">
+                    <%= link_to snippet.title, snippet_path(snippet.id) %>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<script>
+$(function(){
+    //.accordionの中のliの中のulの初期値を非表示に
+  $('.accordion li ul').toggle();
+    //.accordionの中の.language_name要素がクリックされたら
+	$('.accordion .language_name').click(function(){
+		//クリックされた.accordionの中の.language_mname要素の親要素に隣接するul要素が開いたり閉じたりする。
+		$(this).parent().next('ul').slideToggle(150);
+	});
+});
+</script>

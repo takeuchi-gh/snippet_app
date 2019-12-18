@@ -1,1 +1,8 @@
 @import "modules/user";
+@import "./side_bar";
+@import "./reset.scss";
+@import "./codepretty";
+@import "./header";
+@import "./card";
+@import "./main";
+@import "./flash";
