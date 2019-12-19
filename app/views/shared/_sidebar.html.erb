@@ -9,7 +9,7 @@
   </div>
   <div class="languages">
     <ul class="accordion card">
-      <% current_user.languages.each do |language| %>
+      <% current_user.languages.sort_by(&:name).each do |language| %>
         <li>
           <div class="language card-header">
             <div class="language_name">

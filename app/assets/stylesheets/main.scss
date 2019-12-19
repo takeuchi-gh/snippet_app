@@ -1,7 +1,7 @@
 .main {
   width: calc(100vw - 250px);
   height: auto;
-  form, .container {
+  .container {
     width: 80%;
     margin: 0 auto;
     padding-top: 20px;
@@ -9,4 +9,8 @@
       margin-bottom: 5px;
     }
   }
+}
+
+.position {
+ margin: 39px 5px 0 0;
 }
