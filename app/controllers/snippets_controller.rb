@@ -15,7 +15,7 @@ class SnippetsController < ApplicationController
     @snippet = Snippet.new(snippet_params)
     @snippet.language_id = params[:snippet][:language_id]
     if @snippet.save
-      redirect_to root_path
+      redirect_to @snippet
       flash[:success] = "登録しました"
     else
       flash[:danger] = "エラー"
