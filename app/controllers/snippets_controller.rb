@@ -31,7 +31,7 @@ class SnippetsController < ApplicationController
     snippet = Snippet.find(params[:id])
     snippet.language_id = params[:snippet][:language_id]
     if snippet.update(snippet_params)
-      redirect_to root_path
+      redirect_to @snippet
       flash[:success] = "更新しました"
     else
       flash[:danger] = "エラー"
