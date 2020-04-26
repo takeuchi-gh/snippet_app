@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2019_12_16_064250) do
 
   create_table "languages", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.integer "user_id"
     t.index ["user_id"], name: "index_languages_on_user_id"
   end
@@ -26,9 +26,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_064250) do
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "lamguage_id"
     t.integer "language_id"
-    t.index ["lamguage_id"], name: "index_snippets_on_lamguage_id"
     t.index ["language_id"], name: "index_snippets_on_language_id"
   end
 
